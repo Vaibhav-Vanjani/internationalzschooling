@@ -1,5 +1,5 @@
 const buttonList = [
-  { title: "BOOK DEMO", animated: true },
+  { title: "BOOK DEMO", animated: true , ismobile:true },
   { title: "CALLBACK", animated: true },
   { title: "LOG IN" },
   { title: "ENROLL NOW" },
@@ -8,12 +8,12 @@ const buttonList = [
 export default function Buttons() {
   return (
     <>
-      <div className="flex gap-3">
+      <div className="flex gap-3 shrink-0 items-center">
         {buttonList.map((item, index) => {
           return (
             <button
               key={index}
-              className="
+              className={`${!item.ismobile ? "hidden lg:flex" : ""}
                 group
                 relative
                 overflow-hidden
@@ -21,7 +21,8 @@ export default function Buttons() {
                 rounded-full
                 border border-[#5d5d5d]
                 text-[#5d5d5d]
-              "
+                w-fit shrink-0
+              `}
             >
               {/* animated background */}
               <span
@@ -47,8 +48,8 @@ export default function Buttons() {
                   transition-colors duration-300
                   ${
                     item.animated
-                      ? "text-white"
-                      : "group-hover:text-white"
+                      ? "text-[#5d5d5d]"
+                      : "group-hover:text-[#5d5d5d]"
                   }
                 `}
               >
