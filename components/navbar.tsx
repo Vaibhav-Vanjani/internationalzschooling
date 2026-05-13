@@ -132,7 +132,7 @@ export default function Navbar() {
       mobileDropDown && <>
         <div className="h-screen w-full overflow-y-auto z-10 relative bg-[#F7FBFF]/95 border border-[#F7FBFF]/95">
             { navbuttons.map((item,index)=>{
-                    return <Accordion key={index} title={item.title} para={item.hoverList}/>
+                    return <Accordion key={index} title={item.title} para={item.hoverList} questionMark={undefined}/>
                 })}
           </div>
           
