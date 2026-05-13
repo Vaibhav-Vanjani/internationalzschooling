@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { memo } from "react";
 
 type BadgeType = string;
@@ -42,10 +43,9 @@ export const CourseRow = memo(function CourseRow({
   badges = [],
 }: CourseRowProps) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={href ?? '/'}
+      aria-label={`Open course: ${title}`}
       className="
         flex items-center justify-between gap-3
         py-3 border-b border-slate-200
@@ -69,6 +69,6 @@ export const CourseRow = memo(function CourseRow({
           </span>
         ))}
       </div>
-    </a>
+    </Link>
   );
 });
