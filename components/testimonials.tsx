@@ -4,7 +4,7 @@ import Link from "next/link";
 const successStories = [
   {
     id: 1,
-    image: "/success-stories/1/1.jpg",
+    image: "/1 (1).webp",
     alt: "Student athlete balancing football and studies",
     title:
       "He Almost Quit Football—Here’s What Stopped Him",
@@ -14,7 +14,7 @@ const successStories = [
 
   {
     id: 2,
-    image: "/success-stories/2/img1.jpg",
+    image: "/img1.webp",
     alt: "Student experiencing flexible learning",
     title:
       "She didn't Think Twice before choosing International Schooling",
@@ -24,7 +24,7 @@ const successStories = [
 
   {
     id: 3,
-    image: "/success-stories/3/img1.jpg",
+    image: "/img1 (1).webp",
     alt: "Student excited to learn",
     title:
       "I Don't Feel Like Skipping School Anymore. I Feel Excited to Learn.",
@@ -45,7 +45,7 @@ export default function SuccessStories() {
         md:py-12
       "
     >
-      <div className="r-w">
+      <div className="r-w mx-4">
         {/* heading */}
         <div className="space-y-3 text-center">
           <h2

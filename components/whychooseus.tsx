@@ -67,12 +67,12 @@ const testimonialSections = [
 export default function() {
   return (
     <section className="mb-16">
-      <div className="r-w">
+      <div className="r-w mx-4">
         {testimonialSections.map((section, index) => {
           return (
             <div
               key={index}
-              className="md:my-14 my-10"
+              className="relative md:my-14 my-10"
             >
               <h3
                 className="
@@ -117,6 +117,11 @@ export default function() {
                             justify-center
                           "
                         >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 24 24" fill="#027FFF" 
+                            stroke="#fff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" 
+                            className="absolute duration-150 animate-pulse group-hover:animate-none group-hover:scale-105">
+                              <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                            </svg>
                           {/* <Play
                             size={70}
                             fill="#027FFF"
