@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const accreditationList = [
   {
     image: "/neasc-flat.webp",
@@ -82,9 +84,8 @@ export default function() {
               className="group p-6 rounded-2xl border border-blue-100 bg-blue-50 flex flex-col"
             >
               
-              <img
+              <Image
                 alt={item.alt}
-                loading="lazy"
                 width={200}
                 height={200}
                 src={item.image}
@@ -97,12 +98,11 @@ export default function() {
 
               <div className="flex-1" />
 
-              <a
+              <div
                 className="mx-auto w-max rounded-full text-white bg-blue-800 hover:bg-blue-600 mt-4 px-5 py-2 transition"
-                href={item.href}
               >
                 Read More
-              </a>
+              </div>
             </div>
           ))}
         </div>

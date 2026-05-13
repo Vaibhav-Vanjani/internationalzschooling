@@ -40,7 +40,7 @@ export default function() {
                   src={item.img}
                   alt={item.alt}
                   fill
-                  className="object-cover border-b border-b-gray-400"
+                  className="h-auto w-auto object-cover border-b border-b-gray-400"
                 />
               </div>
 
