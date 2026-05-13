@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Routebtn from "./ui/routebtn";
 
 export default function() {
   return (
@@ -34,9 +35,7 @@ export default function() {
                 "Japan","France","Germany"
               ].map((c) => (
                 <li key={c}>
-                  <a className="mr-2 hover:underline" href={`/${c.toLowerCase()}`}>
-                    {c}
-                  </a> |
+                  <Routebtn btnName={c} routeTo={`/${c.toLowerCase()}`}/>
                 </li>
               ))}
             </ul>

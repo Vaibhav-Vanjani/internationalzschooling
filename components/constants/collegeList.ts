@@ -42,3 +42,36 @@ export const payments = [
     { countryIn: "KOREA", imageName: "korea-payment.webp", alt: "Korea payment" },
     { countryIn: "JAPAN", imageName: "konbini_japan-payment.webp", alt: "Konbini Japan payment" },
   ];
+
+  export const accreditationList = [
+  {
+    imageName: "neasc.webp",
+    title: "NEASC",
+    fullName: "New England Association of Schools and Colleges",
+    countryIn: "",
+  },
+  {
+    imageName: "cognia.webp",
+    title: "Cognia",
+    fullName: "Cognia Accreditation",
+    countryIn: "",
+  },
+  {
+    imageName: "wasc.webp",
+    title: "WASC",
+    fullName: "Western Association of Schools and Colleges",
+    countryIn: "",
+  },
+  {
+    imageName: "college-board.webp",
+    title: "College Board",
+    fullName: "College Board USA",
+    countryIn: "",
+  },
+  {
+    imageName: "ncaa.webp",
+    title: "NCAA",
+    fullName: "National Collegiate Athletic Association",
+    countryIn: "",
+  },
+];
