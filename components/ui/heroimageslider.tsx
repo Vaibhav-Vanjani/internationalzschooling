@@ -3,25 +3,18 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const slides = ["/1.webp", "/2.webp", "/3.webp"];
+
 export default function ImageSlider() {
-  const [imageSlide, setImageSlide] = useState(1);
+  const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const id = setInterval(() => {
-      // fade out
       setFade(false);
 
       setTimeout(() => {
-        setImageSlide((prev) => {
-          if (prev === 3) {
-            return 1;
-          }
-
-          return prev + 1;
-        });
-
-        // fade in
+        setCurrent((prev) => (prev + 1) % slides.length);
         setFade(true);
       }, 50);
     }, 1500);
@@ -30,23 +23,26 @@ export default function ImageSlider() {
   }, []);
 
   return (
-   <div
-  className={`
-    relative
-    w-full
-    h-[53vh]
-    transition-opacity
-    duration-500
-    ${fade ? "opacity-100" : "opacity-10"}
-  `}
->
-  <Image
-    src={`/${imageSlide}.webp`}
-    alt="slider-image"
-    fill
-    priority
-    className="object-cover"
-  />
-</div>
+    <div
+      className={`
+        relative
+        w-full
+        h-[53vh]
+        transition-opacity
+        duration-500
+        ${fade ? "opacity-100" : "opacity-10"}
+      `}
+    >
+      <Image
+        src={slides[current]}
+        alt="slider-image"
+        fill
+        priority={current === 0}
+        fetchPriority={current === 0 ? "high" : "auto"}
+        loading={current === 0 ? "eager" : "lazy"}
+        sizes="100vw"
+        className="object-cover"
+      />
+    </div>
   );
 }
