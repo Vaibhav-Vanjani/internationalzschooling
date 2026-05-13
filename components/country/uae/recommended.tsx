@@ -43,10 +43,13 @@ export default function() {
           <div className="mt-12 relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-lg border border-slate-200">
             
             <Image
+              src="/uae-family-2.webp"
               alt="Parents with kids in UAE"
               width={1200}
               height={650}
-              src="/uae-family-2.webp"
+              quality={60}
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
               className="h-[420px] w-full object-cover"
             />
 

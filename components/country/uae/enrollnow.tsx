@@ -53,26 +53,6 @@ export default function EnrollmentSteps({
           {button.text}
         </a>
       </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: title,
-            description: subtitle,
-            totalTime: "PT5M",
-
-            step: steps.map((step, index) => ({
-              "@type": "HowToStep",
-              position: index + 1,
-              name: step,
-              text: step,
-            })),
-          }),
-        }}
-      />
     </section>
   );
 }
