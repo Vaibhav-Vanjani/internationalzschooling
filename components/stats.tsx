@@ -79,7 +79,7 @@ export default function StatsSection() {
           );
         })}
       </div>
-      <CollegeSlider collegeList={collegeList}/>
+      <CollegeSlider collegeList={collegeList} background={undefined}/>
       <div className="flex flex-col md:flex-row justify-center items-center pb-10 r-w mt-10!">
         <div className="flex flex-col w-7/8">
           <h3 className="md:text-2xl text-center md:mx-0 md:p-1 mb-2 font-black text-[#027FFF] md:uppercase">
