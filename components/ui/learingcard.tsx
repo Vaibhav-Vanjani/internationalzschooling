@@ -1,9 +1,7 @@
-"use client";
-
 import { memo } from "react";
 import { CourseRow } from "./courserow";
 
-type BadgeType = string;
+type BadgeType = "Regular" | "Honors" | "Fixed";
 
 interface Course {
   title: string;
@@ -29,38 +27,54 @@ interface AccordionProps {
   courses: Course[];
 }
 
-export const Accordion = memo(function Accordion({
+const Accordion = memo(function Accordion({
   title,
   courses,
 }: AccordionProps) {
   return (
     <div
       className="
-        rounded-2xl overflow-hidden
+        overflow-hidden
+        rounded-2xl
         bg-blue-900
-        ring-1 ring-white/10
+        ring-1
+        ring-white/10
       "
     >
       <details className="group">
         <summary
           className="
-            flex items-center justify-between
-            cursor-pointer list-none
-            px-5 py-4
+            flex
+            cursor-pointer
+            list-none
+            items-center
+            justify-between
+            px-5
+            py-4
           "
         >
-          <h3 className="text-white font-bold text-lg">
+          <h3 className="text-lg font-bold text-white">
             {title}
           </h3>
 
-          <span
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="
-              text-white transition-transform
+              transition-transform
+              duration-300
               group-open:rotate-180
             "
           >
-            ▼
-          </span>
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         </summary>
 
         <div className="bg-white px-4 pb-3">
@@ -76,8 +90,7 @@ export const Accordion = memo(function Accordion({
   );
 });
 
-
-export default function LearningCard({
+const LearningCard = memo(function LearningCard({
   title,
   subtitle,
   badge,
@@ -86,11 +99,13 @@ export default function LearningCard({
   return (
     <div
       className="
-        rounded-3xl bg-white/95
-        shadow-xl overflow-hidden
-        backdrop-blur
+        overflow-hidden
+        rounded-3xl
+        bg-white
+        shadow-xl
       "
     >
+      {/* HEADER */}
       <div className="border-b border-slate-200 p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -105,10 +120,15 @@ export default function LearningCard({
 
           <div
             className="
-              shrink-0 rounded-full
+              shrink-0
+              rounded-full
               bg-blue-600/10
-              px-3 py-1
-              text-xs font-semibold text-blue-700
+              px-3
+              py-1
+              text-xs
+              font-semibold
+              text-blue-700
+              whitespace-nowrap
             "
           >
             {badge}
@@ -116,17 +136,25 @@ export default function LearningCard({
         </div>
       </div>
 
-      <div className="p-4 space-y-4">
-        {sections.map((section,index) => (
-          <Accordion
-            key={index + (section.category || section.grade || "")}
-            title={
-              section.category || section.grade || ""
-            }
-            courses={section.courses}
-          />
-        ))}
+      {/* CONTENT */}
+      <div className="space-y-4 p-4">
+        {sections.map((section) => {
+          const sectionTitle =
+            section.category ||
+            section.grade ||
+            "Section";
+
+          return (
+            <Accordion
+              key={sectionTitle}
+              title={sectionTitle}
+              courses={section.courses}
+            />
+          );
+        })}
       </div>
     </div>
   );
-}
+});
+
+export default LearningCard;

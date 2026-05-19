@@ -1,48 +1,58 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 const slides = ["/1.webp", "/2.webp", "/3.webp"];
 
-export default function ImageSlider() {
+function ImageSlider() {
   const [current, setCurrent] = useState(0);
-  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setFade(false);
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
 
-      setTimeout(() => {
-        setCurrent((prev) => (prev + 1) % slides.length);
-        setFade(true);
-      }, 50);
-    }, 1500);
-
-    return () => clearInterval(id);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div
-      className={`
+      className="
         relative
         w-full
         h-[53vh]
-        transition-opacity
-        duration-500
-        ${fade ? "opacity-100" : "opacity-10"}
-      `}
+        overflow-hidden
+      "
     >
-      <Image
-        src={slides[current]}
-        alt="slider-image"
-        fill
-        priority={current === 0}
-        fetchPriority={current === 0 ? "high" : "auto"}
-        loading={current === 0 ? "eager" : "lazy"}
-        sizes="100vw"
-        className="object-cover"
-      />
+      {slides.map((slide, index) => (
+        <Image
+          key={slide}
+          src={slide}
+          alt={`slider-image-${index + 1}`}
+          fill
+          sizes="100vw"
+          priority={index === 0}
+          quality={75}
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
+          className={`
+            object-cover
+            absolute
+            inset-0
+            transition-opacity
+            duration-700
+            will-change-opacity
+            ${
+              current === index
+                ? "opacity-100 z-10"
+                : "opacity-0 z-0"
+            }
+          `}
+        />
+      ))}
     </div>
   );
 }
+
+export default memo(ImageSlider);
