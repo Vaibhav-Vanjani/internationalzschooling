@@ -51,11 +51,12 @@ export default function() {
               className="group p-6 rounded-2xl border border-blue-100 bg-blue-50 flex flex-col"
             >
               
-              <img
+              <Image
                 alt={item.alt}
                 loading="lazy"
                 width={200}
                 height={200}
+                quality={60}
                 src={item.image}
                 className="min-w-50 mx-auto h-auto object-contain mb-4 mix-blend-multiply"
               />
@@ -88,6 +89,7 @@ export default function() {
                 alt={item.alt}
                 width={200}
                 height={200}
+                quality={60}
                 src={item.image}
                 className="min-w-50 mx-auto h-auto object-contain mb-4 mix-blend-multiply"
               />

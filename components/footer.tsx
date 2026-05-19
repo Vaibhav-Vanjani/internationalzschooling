@@ -12,6 +12,7 @@ export default function() {
               alt="logo"
               width={400}
               height={100}
+              quality={60}
               className="mx-auto my-5 max-w-72 md:max-w-80 bg-white/95 px-2 py-3 rounded-xl"
               src="/logo (1).webp"
             />

@@ -74,6 +74,7 @@ export default function WhyFamiliesChoose() {
               alt="UAE map"
               width={260}
               height={260}
+              quality={60}
               src="/AE-Map.webp"
               className="mix-blend-multiply"
             />

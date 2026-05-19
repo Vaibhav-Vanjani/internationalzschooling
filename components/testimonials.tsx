@@ -109,6 +109,7 @@ export default function SuccessStories() {
                     alt={story.alt}
                     width={1920}
                     height={1081}
+                    quality={60}
                     className="
                       h-[240px]
                       w-full

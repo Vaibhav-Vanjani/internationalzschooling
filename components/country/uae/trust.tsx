@@ -156,6 +156,7 @@ export default function Trust() {
           alt="icon"
           width={50}
           height={15}
+          quality={60}
           src="/zoom-logo-s.webp"
         />
 
@@ -240,6 +241,7 @@ export default function Trust() {
               alt="cognia-wasc"
               width={400}
               height={83}
+              quality={60}
               className="mx-auto"
               src="/new-strip.webp"
             />

@@ -31,6 +31,7 @@ export default function() {
           <Image
             src="/google-reviews-new.webp"
             alt="Google Reviews"
+            quality={60}
             width={300}
             height={100}
             className="w-28 md:w-32 h-auto"

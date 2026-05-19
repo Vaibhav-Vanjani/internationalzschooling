@@ -90,7 +90,7 @@ export default function Navbar() {
               width={330}
               height={80}
               priority
-              quality={75}
+              quality={60}
               className="
                 object-contain
                 w-[220px]

@@ -30,6 +30,7 @@ export default function CollegeSlider({collegeList,background}:{collegeList:{ima
                 alt="college-logo"
                 width={100}
                 height={100}
+                quality={60}
                 className="object-contain"
               />
 

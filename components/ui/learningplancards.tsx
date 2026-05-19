@@ -4,7 +4,7 @@ export default function({item}:{item:{imageId:string,title:string,subtitle:strin
          <div className="w-4/5 flex flex-col sm:w-3/5 md:w-2/5">
               <div className="card shadow-md rounded-2xl grow">
                 <div className="relative w-full h-[200px]">
-                <Image src={item.imageId} alt={item.title} fill className="object-contain" />
+                <Image src={item.imageId} alt={item.title} quality={60} fill className="object-contain" />
                 </div>
                 <div className="card-body flex flex-col gap-2 p-5">
                   <h2 className="font-semibold text-center! text-2xl md:text-3xl">

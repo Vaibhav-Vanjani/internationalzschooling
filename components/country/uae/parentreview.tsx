@@ -57,6 +57,7 @@ export default function() {
                       alt="Video thumbnail"
                       width={1280}
                       height={720}
+                      quality={60}
                       src={review.image}
                       className="rounded-xl border-2 w-full h-auto"
                     />

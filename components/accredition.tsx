@@ -39,6 +39,7 @@ export default function() {
                 <Image
                   src={item.img}
                   alt={item.alt}
+                  quality={60}
                   fill
                   className="h-auto w-auto object-cover border-b border-b-gray-400"
                 />

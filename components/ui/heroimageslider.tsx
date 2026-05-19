@@ -31,11 +31,17 @@ function ImageSlider() {
           src={slide}
           alt={`slider-image-${index + 1}`}
           fill
-          sizes="100vw"
           priority={index === 0}
-          quality={75}
           loading={index === 0 ? "eager" : "lazy"}
-          fetchPriority={index === 0 ? "high" : "auto"}
+          fetchPriority={index === 0 ? "high" : "low"}
+          quality={60}
+          sizes="
+            (max-width: 640px) 100vw,
+            (max-width: 1024px) 100vw,
+            100vw
+          "
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiIAAABXRUJQVlA4ICAAAADQAgCdASoQABAAPpFIoUylpCMiIagAsBIJaQAA3AA/v89WAAAA"
           className={`
             object-cover
             absolute

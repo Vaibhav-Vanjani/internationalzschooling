@@ -45,6 +45,7 @@ export default function BlogGrid() {
                     alt={blog.slug}
                     width={500}
                     height={300}
+                    quality={60}
                     className="w-full h-56 object-cover"
                   />
                   <h2 className="card-title text-[#5D5D5D] text-center mx-3 mb-2 text-lg mt-3">

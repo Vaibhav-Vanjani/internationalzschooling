@@ -43,7 +43,7 @@ function Video() {
             fill
             priority={false}
             loading="lazy"
-            quality={75}
+            quality={60}
             sizes="(max-width: 768px) 100vw, 50vw"
             className="
               object-cover
