@@ -1,18 +1,5 @@
 import LearningCard from "@/components/ui/learingcard";
-
-type BadgeType = "Regular" | "Honors" | "Fixed";
-
-interface Course {
-  title: string;
-  href?: string;
-  badges?: BadgeType[];
-}
-
-interface Section {
-  category?: string;
-  grade?: string;
-  courses: Course[];
-}
+import type { BadgeType , Section, Course} from "@/components/constants/coursecarddata";  
 
 interface LearningSectionProps {
   title: string;

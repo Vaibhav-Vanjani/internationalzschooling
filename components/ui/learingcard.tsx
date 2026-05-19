@@ -1,21 +1,8 @@
 import { memo } from "react";
 import { CourseRow } from "./courserow";
+import type { Section, Course } from "@/components/constants/coursecarddata.tsx";
 
-type BadgeType = "Regular" | "Honors" | "Fixed";
-
-interface Course {
-  title: string;
-  href?: string;
-  badges?: BadgeType[];
-}
-
-interface Section {
-  category?: string;
-  grade?: string;
-  courses: Course[];
-}
-
-interface LearningCardProps {
+export interface LearningCardProps {
   title: string;
   subtitle: string;
   badge: string;
@@ -140,8 +127,6 @@ const LearningCard = memo(function LearningCard({
       <div className="space-y-4 p-4">
         {sections.map((section) => {
           const sectionTitle =
-            section.category ||
-            section.grade ||
             "Section";
 
           return (

@@ -1,13 +1,7 @@
 import Link from "next/link";
 import { memo } from "react";
+import type { BadgeType , Section, Course} from "@/components/constants/coursecarddata.tsx";
 
-type BadgeType = "Regular" | "Honors" | "Fixed";
-
-interface Course {
-  title: string;
-  href?: string;
-  badges?: BadgeType[];
-}
 
 interface BadgeProps {
   type: BadgeType;
@@ -17,6 +11,8 @@ const badgeStyles: Record<BadgeType, string> = {
   Regular: "bg-purple-700/90",
   Honors: "bg-pink-700/90",
   Fixed: "bg-blue-700/90",
+  Advance: "bg-green-700/90",
+  "1:1": "bg-yellow-700/90",
 };
 
 const Badge = memo(function Badge({ type }: BadgeProps) {
